@@ -49,7 +49,7 @@
       }
     }
     .tag-text {
-      color: #ff5f2e;
+      color: #657de7;
       padding-right: 2px;
     }
     .c-post-date {
@@ -77,10 +77,10 @@
   font-size: 13px;
   color: $white-color;
   border: none;
-  background-color: #ff5f2e;
+  background-color: #657de7;
   outline: none;
   &:hover {
-    background-color: darken(#ff5f2e, 15%);
+    background-color: darken(#657de7, 15%);
   }
 }
 
