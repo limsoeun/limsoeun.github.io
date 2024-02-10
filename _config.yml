@@ -1,0 +1,48 @@
+title: Soeun's Blog
+description: Flexton is a responsive and ultra-minimal theme for Jekyll.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://limsoeun.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Author
+author-name: SoeunLim
+author-image: profile.jpg
+author-job: Frontend Developer
+author-email: soeun123556@gmail.com # Add your email for contant form.
+about-author: 
+
+# Social settings
+# social-notion: https://www.notion.so/6b057559a9f24ebdba9fd4357ca2ef2e?v=8c80117da3664968b4165676b18b44e6
+social-github: limsoeun
+# social-linkedin: a
+
+# Newsletter
+mailchimp: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
+
+# Google Analytics
+google-analytics: # Add your identifier. For example UA-99631805-1
+
+# Comment Section (Disqus)
+disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
+  
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+plugins:
+  - jekyll-paginate
+  - jekyll-archives
+
+paginate: 8
+paginate_path: "/page/:num/"
+
+include:
+  - _pages
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

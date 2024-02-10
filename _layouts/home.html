@@ -1,0 +1,85 @@
+---
+layout: default
+---
+
+
+<aside class="c-sidebar">
+  <div class="c-sidebar-author">
+    <div class="c-author__cover">
+      <a href="{{site.baseurl}}/">
+        <img src="{{site.baseurl}}/images/{% if site.author-image %}{{site.author-image}}{% endif %}" alt="{{site.author-name}}">
+      </a>
+    </div>
+    <div class="c-author__info">
+      <div class="c-author__name">{{site.author-name}}</div>
+      <span class="c-author__job">{{site.author-job}}</span>
+    </div>
+  </div>
+
+  <div class="c-sidebar-body">
+
+    <div class="c-social__title">category</div>
+    <ul class="sidebar-category">
+      <li>
+        <a href="{{ site.baseurl }}/" class="active">
+          {% assign postCount = site.posts | size %}
+          전체 <div class="category-count">{{postCount}}</div>
+        </a>
+      </li>
+      {% capture cats %} {% for cat in site.categories %} {{ cat | first }} {% endfor %} {% endcapture %} {% assign sortedCats = cats | split: ' ' | sort %} {% for category in sortedCats %}
+      {{cat}}
+      
+        <li>
+          {% assign cat_dir = site.category_dir | default: 'category' %}
+          <a href="{{ site.baseurl }}/{{ cat_dir }}/{{ category }}/">
+          
+            {% for post in site.categories[category] limit: 1 %}
+            {% assign empty-figure = nil %}
+            {% endfor %}
+            <div class="cagory-name">{{ category }} </div>
+            <div class="category-count">{{site.categories[category] | size}}</div>
+          </a>
+        </li>
+        {% endfor %}
+    </ul>
+  </div>
+
+  <div class="c-sidebar-footer">
+    <div class="c-social">
+      <div class="c-social__title">Social</div>
+      <ul class="c-social__list u-lists-reset">
+        {% if site.social-notion %}
+          <li class="c-social__item">
+            <a href="{{ site.social-notion }}" target="_blank">
+              <img src="{{site.baseurl}}/images/notion.svg" />
+            </a>
+          </li>
+        {% else %}
+        {% endif %}
+        {% if site.social-github %}
+          <li class="c-social__item">
+            <a href="https://github.com/{{site.social-github}}" target="_blank">
+              <img src="{{site.baseurl}}/images/github.svg" />
+            </a>
+          </li>
+        {% else %}
+        {% endif %}
+        {% if site.social-linkedin %}
+          <li class="c-social__item">
+            <a href="https://in.linkedin.com/in/{{site.social-linkedin}}" target="_blank">
+              <img src="{{site.baseurl}}/images/linkedin.svg" id="svg-linkin"/>
+            </a>
+          </li> 
+        {% else %}
+        {% endif %}
+      </ul>
+    </div>
+    <div class="c-copyright">
+      <p>{{site.time | date: '%Y'}} &copy; {{site.author-name}}</p>
+    </div>
+  </div>
+</aside> <!-- /.c-sidebar -->
+
+<main class="c-content">
+  {{ content }}
+</main> <!-- /.c-content -->

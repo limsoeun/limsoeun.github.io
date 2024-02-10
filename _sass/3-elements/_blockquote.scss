@@ -1,0 +1,16 @@
+/* ===============
+	BLOCKQUOTE
+=============== */
+
+blockquote {
+  padding-left: $base-spacing-unit;
+  border-left: 3px solid #ff5f2e;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  background-color: rgba(255, 95, 46, 0.05);
+  p {
+    padding: 5px;
+    font-size: 16px;
+  }
+}
